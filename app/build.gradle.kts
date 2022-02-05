@@ -45,3 +45,9 @@ application {
     // Define the main class for the application.
     mainClass.set("kpop.AppKt")
 }
+
+tasks {
+    build {
+        dependsOn("installDist")
+    }
+}
