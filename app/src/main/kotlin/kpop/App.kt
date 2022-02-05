@@ -25,7 +25,7 @@ fun Application.module() {
             call.respondText("Hello, world!")
         }
         get("/json") {
-            call.respond(Message(message="hi!"))
+            call.respond(Message(message="hi !"))
         }
     }
 }
