@@ -10,6 +10,8 @@ plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.5.31"
 
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.6.10"
+
     // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
@@ -18,6 +20,8 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
+
+
 
 dependencies {
     // Align versions of all Kotlin components
@@ -36,9 +40,12 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 
     // ktor
-    implementation("io.ktor:ktor-server-core:1.6.7")
-    implementation("io.ktor:ktor-server-netty:1.6.7")
     implementation("ch.qos.logback:logback-classic:1.2.5")
+    val ktor_version by extra { "1.6.7" }
+    implementation("io.ktor:ktor-server-core:$ktor_version")
+    implementation("io.ktor:ktor-server-netty:$ktor_version")
+    implementation("io.ktor:ktor-serialization:$ktor_version")
+    // implementation("io.ktor:ktor-client-gson:$ktor_version")
 }
 
 application {
