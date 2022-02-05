@@ -51,3 +51,7 @@ tasks {
         dependsOn("installDist")
     }
 }
+
+tasks.create("stage") {
+    dependsOn("installDist")
+}
