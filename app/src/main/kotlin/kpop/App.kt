@@ -24,6 +24,10 @@ fun Application.module() {
         get("/") {
             call.respondText("Hello, world!")
         }
+        get("/toupper") {
+            val str : String = call.request.queryParameters["str"] ?: "";
+            call.respondText(str.uppercase())
+        }
         get("/json") {
             call.respond(Message(message="hi !"))
         }
