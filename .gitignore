@@ -32,3 +32,5 @@ build
 
 # heroku buildpack specific
 !gradle/wrapper/gradle-wrapper.jar
+
+.DS_Store
