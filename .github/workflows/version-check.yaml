@@ -1,0 +1,13 @@
+name: version-check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  version-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: facutk/gradle-check-version@v1
